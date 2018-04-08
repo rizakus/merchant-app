@@ -1,0 +1,16 @@
+<configuration>
+    <property resource="application.properties" />
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${logging.path}/merchant-app.log</file>
+        <encoder>
+            <pattern>%d{dd/MM/yy HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.hibernate.tool.schema.internal" level="DEBUG" />
+    <logger name="org.hibernate.SQL" level="DEBUG" />
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
